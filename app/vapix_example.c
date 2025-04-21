@@ -191,7 +191,7 @@ int main(void) {
 
     char* credentials = retrieve_vapix_credentials("example-vapix-user");
     sprintf(g_credentials,"%s", credentials);
-    syslog(LOG_INFO, "credentials£º%s", g_credentials);
+    syslog(LOG_INFO, "credentials£º%s", g_credentials);//don't  do this way in release.
     
     char strUrl[MAX_STR_LENGTH];
 	char strData[MAX_DATA_LENGTH];
