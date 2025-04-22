@@ -191,7 +191,7 @@ int main(void) {
 
     char* credentials = retrieve_vapix_credentials("example-vapix-user");
     sprintf(g_credentials,"%s", credentials);
-    syslog(LOG_INFO, "credentials£º%s", g_credentials);//don't  do this way in release.
+    syslog(LOG_INFO, "credentialsÂ£Âº%s", g_credentials);//don't  do this way in release.
     
     char strUrl[MAX_STR_LENGTH];
 	char strData[MAX_DATA_LENGTH];
@@ -200,8 +200,8 @@ int main(void) {
 	memset(strData, 0, MAX_DATA_LENGTH);	
   
     //sprintf(strUrl, "http://127.0.0.12/axis-cgi/param.cgi?action=list&group=root.ImageSource.I0.Sensor.Brightness");	
-    sprintf(strUrl, "http://127.0.0.12/axis-cgi/pwdgrp.cgi?action=add&user=zzzzzzzzz&pwd=yyy&grp=users&sgrp=viewer&comment=zzz");	
-	//sprintf(strUrl, "http://127.0.0.12/axis-cgi/applications/control.cgi?action=start&package=send_event");
+    //sprintf(strUrl, "http://127.0.0.12/axis-cgi/pwdgrp.cgi?action=add&user=zzzzzzzzz&pwd=yyy&grp=users&sgrp=viewer&comment=zzz");	
+	sprintf(strUrl, "http://127.0.0.12/axis-cgi/applications/control.cgi?action=start&package=send_event");
 
 	if(FALSE == SendRecv(strUrl, g_credentials, strData))
 	{
